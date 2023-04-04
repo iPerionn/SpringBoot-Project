@@ -33,8 +33,8 @@ public class ConcreteUserService implements UserService{
     }
 
     @Override
-    public User findByName(String userName) {
-        return userRepository.findByName(userName);
+    public User findByName(String email) {
+        return userRepository.findByEmail(email);
     }
     
 }

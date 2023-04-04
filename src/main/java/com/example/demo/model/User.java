@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.Collection;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -22,9 +24,14 @@ public class User implements Serializable{
   @GeneratedValue(strategy=GenerationType.IDENTITY)
   private Integer id;
 
-  private String name;
-
+  @Column(unique = true)
   private String email;
+  @Column(nullable = false)
+  private String password;
+  @Column(nullable = false)
+  private String firstName;
+  @Column(nullable = false)
+  private String lastName;
 
   @ManyToMany(fetch = FetchType.LAZY)
   private Collection<Activity> activities;

@@ -23,14 +23,14 @@ public class DemoApplication {
 	CommandLineRunner commandLineRunner(UserService userService, ActivityService activiteService, CommentService commentService){
 		return args -> {
 
-			User henri = User.builder().name("Henri").email("test@gmil.com").build();
-			User bilel = User.builder().name("Bilel").email("test@gmil.com").build();
+			User henri = User.builder().firstName("Henri").email("test1@gmil.com").password("test").lastName("Dujardin").build();
+			User bilel = User.builder().firstName("Bilel").email("test2@gmil.com").password("test").lastName("Dujardin").build();
 			Activity rugby = Activity.builder().name("Rugby").build();
 			
 			userService.saveUser(henri);
 			userService.saveUser(bilel);
-			userService.saveUser(User.builder().name("Victor").email("test@gmil.com").build());
-			userService.saveUser(User.builder().name("Allane").email("test@gmil.com").build());
+			userService.saveUser(User.builder().firstName("Victor").email("test3@gmil.com").password("test").lastName("Dujardin").build());
+			userService.saveUser(User.builder().firstName("Allane").email("test4@gmil.com").password("test").lastName("Dujardin").build());
 
 			activiteService.saveActivity(rugby);
 			activiteService.saveActivity(Activity.builder().name("Football").build());

@@ -7,6 +7,5 @@ import com.example.demo.model.Activity;
 
 @Repository
 public interface ActivityRepository extends CrudRepository<Activity, Integer>{
-    
     Activity findByName(String name);
 }
