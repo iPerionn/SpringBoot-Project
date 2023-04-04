@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.Collection;
 
 import jakarta.persistence.Column;
