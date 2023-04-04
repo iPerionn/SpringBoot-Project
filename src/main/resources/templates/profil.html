@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html	lang="fr"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+ 	    <meta charset="utf-8"> 	
+        <title>Menu</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+ 	</head>
+ 	<body>
+		<!-- insertion du header -->
+		<div th:insert="fragments/header :: header"> </div>
+
+		<!-- profil utilisateur -->
+		<form method="GET" th:action="@{/logout}">
+			<h1>Bienvenue : </h1>
+
+			<label><b>Nom d'utilisateur</b></label>
+			<input type="text" value="" name="username" required>
+
+			<label><b>Mot de passe</b></label>
+			<input type="password" value="" name="password" required>
+
+			<input type="submit" value="Modifier"/>
+		</form>
+
+		<!-- insertion du footer -->
+		<div th:insert="fragments/footer :: footer"></div>
+ 	</body>
+ </html>

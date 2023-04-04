@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html	lang="fr"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+ 	    <meta charset="utf-8"> 	
+        <title>Menu</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+ 	</head>
+ 	<body>
+		<!-- insertion du header -->
+		<div th:insert="fragments/header :: header"> </div>
+
+		<!-- menu -->
+ 		<div id="menuContainer">
+            <h1>Bienvenue sur notre site d’activités physiques dans le cadre de programmes thérapeutiques</h1>
+            <a href="/connexion"> <button>Connexion</button> </a>
+            <a href="/inscription"><button> Inscription </button></a>
+ 		</div>
+
+		<!-- insertion du footer -->
+		<div th:insert="fragments/footer :: footer"></div>
+ 	</body>
+ </html>
