@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.model.User;
+import com.example.demo.service.ActivityService;
 import com.example.demo.service.UserService;
 
 
@@ -15,9 +16,18 @@ public class MainController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ActivityService activityService;
+
     @GetMapping("/")
     public String home(){
         return "menu";
+    }
+
+    @GetMapping("/activites")
+    public String articles(Model model){
+        model.addAttribute("activities", activityService.getActivities());
+        return "activity";
     }
 
     @GetMapping(path = "/connexion")

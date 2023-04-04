@@ -19,5 +19,12 @@ public class ConcreteActivityService implements ActivityService{
     public Activity saveActivity(Activity activity) {
         return activityRepository.save(activity);
     }
+
+    @Override
+    public Iterable<Activity> getActivities() {
+        return activityRepository.findAll();
+    }
+
+
     
 }

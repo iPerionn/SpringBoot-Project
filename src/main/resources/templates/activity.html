@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html	lang="fr"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+ 	    <meta charset="utf-8"> 	
+        <title>Articles</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+ 	</head>
+ 	<body>
+		<!-- insertion du header -->
+		<div th:insert="fragments/header :: header"> </div>
+
+		<!-- contenu -->
+ 		<div th:each="activity:${activities}">
+            <p th:text="${activity.id}"></p>
+            <p th:text="${activity.name}"></p>
+ 		</div>
+
+		<!-- insertion du footer -->
+		<div th:insert="fragments/footer :: footer"></div>
+ 	</body>
+ </html>
