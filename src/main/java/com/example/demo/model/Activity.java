@@ -21,4 +21,12 @@ public class Activity implements Serializable{
 
     private String name;
 
+    private String sportName;
+
+    private String address;
+
+    private String state;
+
+    private String phoneNumber;
+
 }

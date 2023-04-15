@@ -103,3 +103,70 @@ input[type=submit]:hover {
     color: #6495ED;
     border: 1px solid #6495ED;
 }
+
+#mainActivityContainer{
+    width: 95%;
+    margin:0 auto;
+    margin-top:5%;
+    background-color: white;
+    font: italic 1.2em "Fira Sans", serif;
+    box-shadow: 15px 5px 20px rgb(20, 17, 17);
+    border: 1px solid black;
+
+    display: flex;
+}
+
+#CommentsActivityContainer{
+    width: 95%;
+    margin:0 auto;
+    margin-top:5%;
+    background-color: white;
+    font: italic 1.2em "Fira Sans", serif;
+    box-shadow: 15px 5px 20px rgb(20, 17, 17);
+    border: 1px solid black;
+}
+
+#detailsActivityContainer{
+    width: 30%;
+    padding-left: 3%;
+}
+
+#detailsActivityContainer p{
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding-left: 5%;
+}
+
+#divCommentaire{
+    display: flex;
+}
+
+#detailsActivityContainer h2{
+    margin-bottom: 2%;
+}
+
+#detailsActivityContainer button{
+    background-color: #6495ED;
+    color: white;
+    padding: 0;
+    margin:0;
+    margin-bottom: 5%;
+    font-size: large;
+    height: 60px;
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 25% 10%;
+    cursor: pointer;
+}
+
+#detailsActivityContainer button:hover{
+    background-color: white;
+    color: #6495ED;
+    border: 1px solid #6495ED;
+}
+
+#mapActivityContainer{
+    border-left: 1px solid black;
+    background-color: red;
+    
+}

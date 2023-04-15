@@ -25,6 +25,11 @@ public class ConcreteActivityService implements ActivityService{
         return activityRepository.findAll();
     }
 
+    @Override
+    public Activity findById(Integer activity_id) {
+        return activityRepository.findById(activity_id).orElse(null);
+    }
+
 
     
 }

@@ -25,7 +25,7 @@ public class DemoApplication {
 
 			User henri = User.builder().firstName("Henri").email("test1@gmil.com").password("test").lastName("Dujardin").build();
 			User bilel = User.builder().firstName("Bilel").email("test2@gmil.com").password("test").lastName("Dujardin").build();
-			Activity rugby = Activity.builder().name("Rugby").build();
+			Activity rugby = Activity.builder().name("Club Multi-Sport").address("Jean-Jaurès, Tours").phoneNumber("0029101002").sportName("Rugby").build();
 			
 			userService.saveUser(henri);
 			userService.saveUser(bilel);
@@ -33,18 +33,17 @@ public class DemoApplication {
 			userService.saveUser(User.builder().firstName("Allane").email("test4@gmil.com").password("test").lastName("Dujardin").build());
 
 			activiteService.saveActivity(rugby);
-			activiteService.saveActivity(Activity.builder().name("Football").build());
-			activiteService.saveActivity(Activity.builder().name("Meditation").build());
-			activiteService.saveActivity(Activity.builder().name("Natation").build());
-			activiteService.saveActivity(Activity.builder().name("Aquagym").build());
-			activiteService.saveActivity(Activity.builder().name("Streshing").build());
+			activiteService.saveActivity(Activity.builder().name("Club Multi-Sport").address("Jean-Jaurès, Tours").phoneNumber("0029101002").sportName("Football").build());
+			activiteService.saveActivity(Activity.builder().name("Club Multi-Sport").address("Jean-Jaurès, Tours").phoneNumber("0029101002").sportName("Meditation").build());
+			activiteService.saveActivity(Activity.builder().name("Club Multi-Sport").address("Jean-Jaurès, Tours").phoneNumber("0029101002").sportName("Natation").build());
+			activiteService.saveActivity(Activity.builder().name("Club Multi-Sport").address("Jean-Jaurès, Tours").phoneNumber("0029101002").sportName("Aquagym").build());
+			activiteService.saveActivity(Activity.builder().name("Club Multi-Sport").address("Jean-Jaurès, Tours").phoneNumber("0029101002").sportName("Streshing").build());
 
 			userService.addUserToActivity(henri.getId(), rugby.getId());
 
 			commentService.saveAvis(Comment.builder().content("Activité très relaxante").author(henri).activity(rugby).build());
 			commentService.saveAvis(Comment.builder().content("C'est assez physique !").author(bilel).activity(rugby).build());
 
-	
 		};
 	}
 

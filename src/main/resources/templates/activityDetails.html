@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html	lang="fr"
+		xmlns:th="http://www.thymeleaf.org">
+	<head>
+ 	    <meta charset="utf-8"> 	
+        <title>Articles</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+ 	</head>
+ 	<body>
+		<!-- insertion du header -->
+		<div th:insert="fragments/header :: header"> </div>
+
+		<!-- contenu -->
+ 		<div id="mainActivityContainer">
+            <div id="detailsActivityContainer">
+                <h2>Organisation :</h2>
+				<p th:text="${activity.name}"></p>
+                <h2>Sport :</h2>
+                <p th:text="${activity.sportName}"></p>
+                <h2>Adresse :</h2>
+                <p th:text="${activity.address}"></p>
+                <h2>Telephone :</h2>
+                <p th:text="${activity.phoneNumber}"></p>
+				<button> Ajouter à mon programme </button>
+            </div>
+            <div id="mapActivityContainer"></div>
+ 		</div>
+
+		<div id="CommentsActivityContainer">
+			<h2>Les avis de la communauté :</h2>
+			<div id="divCommentaire" th:each="comment:${comments}">
+				<p th:text="${comment.author.firstName}"></p><pre> </pre><p th:text="${comment.author.lastName}"></p><pre> </pre><p> : </p><pre> </pre>
+				<p th:text="${comment.content}"></p>
+			 </div>
+		</div>
+
+		<!-- insertion du footer -->
+		<div th:insert="fragments/footer :: footer"></div>
+ 	</body>
+ </html>
