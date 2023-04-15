@@ -6,6 +6,6 @@ import com.example.demo.model.Activity;
 import com.example.demo.model.Comment;
 
 public interface CommentService {
-    Comment saveAvis(Comment avis);
+    Comment saveComment(Comment avis);
     List<Comment> findByActivity(Activity activity);
 }

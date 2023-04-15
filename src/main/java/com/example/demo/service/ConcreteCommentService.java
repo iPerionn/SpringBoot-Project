@@ -19,7 +19,7 @@ public class ConcreteCommentService implements CommentService{
     private CommentRepository commentRepository;
 
     @Override
-    public Comment saveAvis(Comment comment) {
+    public Comment saveComment(Comment comment) {
         return commentRepository.save(comment);
     }
 

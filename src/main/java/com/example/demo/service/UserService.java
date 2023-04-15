@@ -6,4 +6,6 @@ public interface UserService {
     User saveUser(User user);
     void addUserToActivity(Integer user_id, Integer activity_id);
     User findByEmail(String email);
+    User findById(Integer user_id);
+    public Iterable<User> getUsers();
 }

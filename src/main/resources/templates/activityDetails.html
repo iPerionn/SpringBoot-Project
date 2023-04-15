@@ -34,6 +34,22 @@
 			 </div>
 		</div>
 
+		<div id="container">
+			<form action="#" th:action="@{'/addComment/'+${activity.id}}" th:object="${comment}" method="post">
+				<label><b>Commentaire : </b></label>
+				<input type="text" placeholder="Votre commentaire" th:field="*{content}" required>
+				<label><b>De : </b></label>
+				<select th:field="*{author}" required>
+					<option th:each="user : ${users}"
+						th:value="${user.id}"
+						th:text="${user.firstName}">
+							User
+					</option>
+				</select>
+				<input type="submit" value="Commentez">
+			</form>
+		</div>
+
 		<!-- insertion du footer -->
 		<div th:insert="fragments/footer :: footer"></div>
  	</body>

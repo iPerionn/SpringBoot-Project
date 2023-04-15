@@ -41,8 +41,8 @@ public class DemoApplication {
 
 			userService.addUserToActivity(henri.getId(), rugby.getId());
 
-			commentService.saveAvis(Comment.builder().content("Activité très relaxante").author(henri).activity(rugby).build());
-			commentService.saveAvis(Comment.builder().content("C'est assez physique !").author(bilel).activity(rugby).build());
+			commentService.saveComment(Comment.builder().content("Activité très relaxante").author(henri).activity(rugby).build());
+			commentService.saveComment(Comment.builder().content("C'est assez physique !").author(bilel).activity(rugby).build());
 
 		};
 	}

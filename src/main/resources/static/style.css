@@ -170,3 +170,9 @@ input[type=submit]:hover {
     background-color: red;
     
 }
+
+#listActivitiesActivity{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px #ccc;
+}

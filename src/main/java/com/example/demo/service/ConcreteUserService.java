@@ -36,5 +36,15 @@ public class ConcreteUserService implements UserService{
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    @Override
+    public Iterable<User> getUsers() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User findById(Integer user_id) {
+        return userRepository.findById(user_id).orElse(null);
+    }
     
 }

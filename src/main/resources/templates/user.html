@@ -10,13 +10,10 @@
 		<!-- insertion du header -->
 		<div th:insert="fragments/header :: header"> </div>
 		<div id="listActivities">
-
-			<div id="listActivitiesActivity" th:each="activity:${activities}">
-				<p th:text="${activity.id}"></p>
-				<p th:text="${activity.name}"></p>
-				<p th:text="${activity.sportName}"></p>
-				<p th:text="${activity.address}"></p>
-				<p><a th:href="@{'/activity/' + ${activity.id}}">Voir détail activité</a></p>
+			<div id="listActivitiesActivity" th:each="user:${users}">
+				<p th:text="${user.id}"></p>
+				<p th:text="${user.email}"></p>
+				<p><a th:href="@{'/user/' + ${user.id}}">Voir détail utilisateur</a></p>
 			 </div>
 
 		</div>
