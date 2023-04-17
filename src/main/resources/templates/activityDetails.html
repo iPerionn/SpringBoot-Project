@@ -13,7 +13,8 @@
 		<!-- contenu -->
  		<div id="mainActivityContainer">
             <div id="detailsActivityContainer">
-                <h2>Organisation :</h2>
+				<div id="padding">
+					<h2>Organisation :</h2>
 				<p th:text="${activity.name}"></p>
                 <h2>Sport :</h2>
                 <p th:text="${activity.sportName}"></p>
@@ -21,7 +22,18 @@
                 <p th:text="${activity.address}"></p>
                 <h2>Telephone :</h2>
                 <p th:text="${activity.phoneNumber}"></p>
-				<button> Ajouter à mon programme </button>
+				</div>
+				<form id="formUserActivity" action="#" th:action="@{'/addActivityToUser/'+${activity.id}}" th:object="${userForm}" method="post">
+					<label><b>Utilisateur : </b></label>
+					<select th:field="*{id}" required>
+						<option th:each="user : ${users}"
+							th:value="${user.id}"
+							th:text="${user.firstName}">
+								User
+						</option>
+					</select>
+					<input type="submit" value="Ajouter au programme de l'utilisateur">
+				</form>
             </div>
             <div id="mapActivityContainer"></div>
  		</div>

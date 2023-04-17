@@ -47,20 +47,30 @@ public class MainController {
         Activity activity = activityService.findById(Integer.valueOf(id));
         model.addAttribute("activity", activity);
         model.addAttribute("comments", commentService.findByActivity(activity));
-
+        model.addAttribute("userForm", new User());
         model.addAttribute("comment", new Comment());
         model.addAttribute("users", userService.getUsers());
         return "activityDetails";
     }
 
     @PostMapping(path = "/addComment/{activity_id}")
-    public void createUser(
+    public void addComment(
         @ModelAttribute Comment comment, 
     Model model,@PathVariable("activity_id") String activity_id,HttpServletResponse response) throws IOException
     {
         comment.setActivity(activityService.findById(Integer.valueOf(activity_id)));
         commentService.saveComment(comment);
         response.sendRedirect("/activity/"+activity_id);
+    }
+
+    @PostMapping(path = "/addActivityToUser/{activity_id}")
+    public void addActivityToUser(
+        @ModelAttribute User userForm, 
+    Model model,@PathVariable("activity_id") Integer activity_id,HttpServletResponse response) throws IOException
+    {
+        Integer user_id = userForm.getId();
+        userService.addUserToActivity(user_id, activity_id);
+        response.sendRedirect("/user/"+user_id);
     }
 
     @GetMapping(path = "/connexion")

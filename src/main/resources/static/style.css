@@ -11,6 +11,7 @@ header{
     padding: 0;
     text-align: right;
 }
+
 #headerButton{
     background-color: #6495ED;
     color: white;
@@ -128,7 +129,6 @@ input[type=submit]:hover {
 
 #detailsActivityContainer{
     width: 30%;
-    padding-left: 3%;
 }
 
 #detailsActivityContainer p{
@@ -175,4 +175,21 @@ input[type=submit]:hover {
     display: flex;
     justify-content: space-around;
     border-bottom: solid 1px #ccc;
+}
+
+#formUserActivity{
+
+    padding: 10px;
+
+}
+
+#formUserActivity input[type=submit]{
+    
+    padding: 10px;
+    width: 80%;
+
+}
+
+#padding{
+    padding-left: 3%;
 }
